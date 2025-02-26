@@ -14,9 +14,6 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
         }
 
@@ -34,27 +31,39 @@
             z-index: 1000;
         }
 
-        /* Peel Logo */
         .logo {
             height: 80px;
         }
 
-        /* Slogan Image */
-        .slogan {
+        /* Main Content */
+        .content {
             margin-top: 120px;
-            max-width: 90%;
         }
 
-        /* Tagline */
+        .slogan {
+            width: 60%;
+            margin: 20px auto;
+        }
+
         .tagline {
             font-size: 20px;
-            margin-top: 20px;
+            margin: 20px 0;
         }
 
-        /* Button Container */
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .images img {
+            width: 250px;
+            height: auto;
+        }
+
         .button-container {
             display: flex;
-            flex-direction: row;
             justify-content: center;
             gap: 20px;
             margin-top: 30px;
@@ -79,14 +88,23 @@
             background: rgb(38, 145, 75);
         }
 
-        /* Content Sections */
         .section {
             max-width: 800px;
-            margin-top: 40px;
+            margin: 40px auto;
+            text-align: center;
         }
 
         .section h1 {
             font-size: 26px;
+        }
+
+        .bottom-banner, .bottom-banner2 {
+            background: rgb(38, 145, 75);
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 16px;
         }
 
         .disclaimer-text {
@@ -101,15 +119,19 @@
         <img src="static/img/peel-logo.png" alt="Peel Logo" class="logo">
     </div>
 
-    <img src="static/img/peel-slogan.png" alt="Peel Slogan" class="slogan">
-    <p class="tagline">Save time and money — Peel helps you find the <br> best prices online in just seconds.</p>
+    <div class="content">
+        <img src="static/img/peel-slogan.png" alt="Peel Slogan" class="slogan">
+        <p class="tagline">Save time and money — Peel helps you find the <br> best prices online in just seconds.</p>
+    </div>
 
-    <img src="static/img/peel-image.png" alt="Peel Image" class="peel-image">
-    <img src="static/img/peel-image2.png" alt="Peel Image 2" class="peel-image2">
-    <img src="static/img/peel-image3.png" alt="Peel Image 3" class="peel-image3">
-    <img src="static/img/peel-image4.png" alt="Peel Image 4" class="peel-image4">
-    <img src="static/img/peel-image5.png" alt="Peel Image 5" class="peel-image5">
-    <img src="static/img/peel-image7.png" alt="Peel Image 7" class="peel-image7">
+    <div class="images">
+        <img src="static/img/peel-image.png" alt="Peel Image">
+        <img src="static/img/peel-image2.png" alt="Peel Image 2">
+        <img src="static/img/peel-image3.png" alt="Peel Image 3">
+        <img src="static/img/peel-image4.png" alt="Peel Image 4">
+        <img src="static/img/peel-image5.png" alt="Peel Image 5">
+        <img src="static/img/peel-image7.png" alt="Peel Image 7">
+    </div>
 
     <div class="button-container">
         <button class="login-button">Login</button>
@@ -136,8 +158,13 @@
         <p>We won’t ever charge you anything. Peel is free to use and can be used anytime. It’s that easy.</p>
     </div>
 
-    <p class="disclaimer-text">Prices displayed here are examples only and do not reflect current prices. <br>
-        Information you see on this page is provided for general, informational purposes only.</p>
+    <div class="bottom-banner">
+        Start saving on your favorite products
+    </div>
+
+    <div class="bottom-banner2">
+        Prices displayed on this page are for examples only and do not reflect current prices. Information you see on this page is provided for general, informational purposes only. Money you could save depends on your shopping habits. Prices may change frequently and are displayed at the time you choose to shop. Peel does not compare all products or retailers. Shipping, taxes, and additional fees are not included in the listed price. Products may be subject to change at any time as determined by the retailer. Confirm on the retailer's site independently for the full pricing, availability, or product information before finalizing purchase. As a Sovrn affiliate, Peel may earn a small commission on qualifying purchases at no cost to you.
+    </div>
 </body>
 </html>
 
