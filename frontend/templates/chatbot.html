@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Peel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background: linear-gradient(135deg, #256f3a, #187a56, #0f8a65, #046a4c);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        #chat-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background: transparent;
+            overflow-y: auto;
+            padding-top: 140px;
+            padding-bottom: 100px;
+            border: none;
+            box-shadow: none;
+        }
+        #chat-box {
+            width: 90%;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+        .message {
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 70%;
+            word-wrap: break-word;
+            font-size: 16px;
+        }
+        .user-message {
+            align-self: flex-end;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            box-shadow: none;
+        }
+        .bot-message {
+            align-self: flex-start;
+            background-color: transparent;
+            color: white;
+            border: none;
+            box-shadow: none;
+        }
+        .thinking {
+            font-style: italic;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+        #chat-input-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Wider input field */
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px; /* Smoother oval shape */
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            box-shadow: none;
+            border: none;
+            min-height: 50px;
+            max-height: 120px;
+            overflow-y: hidden;
+        }
+        #chat-input {
+            flex-grow: 1;
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            resize: none;
+            min-height: 30px;
+            max-height: 100px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #256f3a transparent; /* Scrollbar matches background */
+            font-family: 'Poppins', sans-serif;
+        }
+        #chat-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+
+        /* Smooth Background-Colored Scrollbar */
+        #chat-input::-webkit-scrollbar {
+            width: 6px;
+        }
+        #chat-input::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #chat-input::-webkit-scrollbar-thumb {
+            background: #256f3a; /* Matches background */
+            border-radius: 10px;
+        }
+        #chat-input::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        #send-button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 12px 14px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #send-button::before {
+            content: '\2191';
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/">
+            <img src="{{ url_for('static', filename='peel-logo.png') }}" alt="Peel Logo" class="logo" style="width: 150px; height: auto;">
+        </a>
+    </header>
+    
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <div id="chat-input-container">
+            <textarea id="chat-input" placeholder="Ask Peel" rows="1"></textarea>
+            <button id="send-button" onclick="sendMessage()"></button>
+        </div>
+    </div>
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+
+        chatInput.addEventListener("input", function () {
+            chatInput.style.height = "30px";
+            chatInput.style.height = Math.min(chatInput.scrollHeight, 100) + "px";
+        });
+
+        chatInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+
+        async function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+            
+            appendMessage(message, 'user-message');
+            chatInput.value = '';
+            chatInput.style.height = "30px";
+            sendButton.disabled = true;
+            
+            const thinkingMessage = appendMessage("<i>Peel is thinking...</i>", 'bot-message thinking');
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+                const data = await response.json();
+                thinkingMessage.remove();
+                
+                if (data.response) {
+                    await displayTypingEffect(data.response, 'bot-message', 15);
+                } else {
+                    appendMessage("I didn't quite understand that.", 'bot-message');
+                }
+            } catch (error) {
+                console.error("[ERROR] Fetch request failed:", error);
+                appendMessage("Sorry, something went wrong.", 'bot-message');
+            } finally {
+                sendButton.disabled = false;
+            }
+        }
+
+        async function displayTypingEffect(text, className, speed = 15) {
+            const messageDiv = appendMessage("", className);
+            for (let i = 0; i < text.length; i++) {
+                messageDiv.innerHTML += text[i];
+                await new Promise(resolve => setTimeout(resolve, speed));
+            }
+        }
+
+        function appendMessage(content, className) {
+            const div = document.createElement('div');
+            div.className = `message ${className}`;
+            div.innerHTML = content;
+            chatBox.appendChild(div);
+            chatBox.scrollTop = chatBox.scrollHeight;
+            return div;
+        }
+    </script>
+</body>
+</html>
