@@ -4,246 +4,306 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
+    min-height: 300vh;
+    width: 94vw;
     flex-direction: column;
-    align-items: flex-start; /* Align content to the left */
-    height: 100vh;
+    align-items: flex-start;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Sticky Header */
 .header {
     position: fixed;
     top: 0;
-    width: 100%;
-    height: 100px;
+    width: 100vw;
+    height: 10vh; /* Scales dynamically */
     background: linear-gradient(135deg, rgb(6, 98, 32), rgb(52, 188, 97));
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding-left: 2vw;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
 /* Peel Logo */
 .logo {
-    height: 170px;
+    height: 18vh; /* Scales dynamically */
     max-height: 190px;
-    margin-top: 25px;
-    margin-left: 15px;
+    margin-top: 2vh;
+    margin-left: 1vw;
+}
+
+/* Floating Header Text */
+.floating-header-text {
+    position: fixed;
+    top: 5.5vh; /* Adjust vertical positioning */
+    right: 4vw; /* Aligns to the upper right */
+    z-index: 1100; /* Ensures it stays above the header */
+}
+
+.floating-header-text p {
+    color: white;
+    font-size: 1.2vw;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0;
 }
 
 /* Tagline Below the Slogan */
 .tagline {
-    font-size: 20px;
-    font-weight: 390;
-    text-align: center;
-    color: #000000; /* Darker green for better contrast */
+    font-size: 1.2vw;
+    font-weight: 380;
+    color: #000000;
     text-align: left;
-    margin-top: -80px; /* Space between slogan and tagline */
-    margin-left: 225px; /* Align with slogan */
+    position: absolute;
+    top: 55vh; /* Proportional positioning */
+    left: 14.8vw;
+    white-space: nowrap; /* Prevents wrapping */
 }
 
-    /* Peel Image (Positioned on the Right) */
+/* Peel Image (Right Side, Stays in Position) */
 .peel-image {
     position: absolute;
-    top: 60%; /* Centered vertically */
-    right: 100px; /* Positioned on the right */
-    transform: translateY(-50%); /* Aligns it properly */
-    max-width: 700px; /* Adjust as needed */
-    height: auto;
-}
-
-/* Button Container (Side by Side, Left Centered, Lowered) */
-.button-container {
-    display: flex;
-    gap: 30px; /* Increased space between buttons */
-    position: absolute;
-    top: 60%; /* Lowered buttons further */
-    left: 50px; /* Stays on the left */
+    top: 58vh; 
+    right: 7.5vw;
     transform: translateY(-50%);
+    max-width: 100vw;
+    height: auto;
+    max-height: 85vh;
 }
 
-/* Login Button */
-.login-button {
-    width: 240px; /* Increased size */
-    height: 60px; /* Increased height */
-    padding: 18px;
-    border: none;
-    border-radius: 14px;
-    color: white;
-    font-size: 22px; /* Larger text */
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+/* Feature 1 */
+.peel-image2 {
+    position: relative;
+    display: block;
+    margin: 4vh auto 0 auto;
+    width: 60vw;
+    height: 20vh;
+    top: 27vh;
+    left: 19vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+/* Discover Text */
+.discover-text {
+    width: 80vw;
+    position: absolute;
+    margin: -140vh auto 0 auto;
+    margin-right: 65vw;
+    margin-bottom: 10vh;
     text-align: center;
-    display: flex;
-    margin-right: 9px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-    text-transform: none;
-    background: rgb(45, 165, 85); /* Slightly darker green */
 }
 
-/* Create Account Button */
-.signup-button {
-    width: 240px; /* Increased size */
-    height: 60px; /* Increased height */
-    padding: 18px;
-    border: none;
-    border-radius: 14px;
-    color: white;
-    font-size: 22px; /* Larger text */
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+.discover-text h1 {
+    font-size: 3vw;
+    font-weight: bold;
+    color: rgb(60, 57, 57);
+    margin-bottom: -1vh;
+    margin-right: 19vw;
+}
+
+.discover-text p {
+    font-size: 1.2vw;
+    color: black;
+    margin-bottom: 20vh;
+    margin-right: 19vw;
+}
+
+/* Compare Prices Text */
+.compare-text {
+    width: 38vw;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-    text-transform: none;
-    background: rgb(45, 165, 85); /* Slightly darker green */
+    position: absolute;
+    left: 55vw;
+    top: 200vh;
 }
 
-/* Login Button Hover */
-.login-button:hover {
-    background: rgb(38, 145, 75); /* Darker green for hover effect */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
+.compare-text h1 {
+    font-size: 3vw;
+    font-weight: bold;
+    color: rgb(60, 57, 57);
+    margin-bottom: 0.5vh;
+    margin-left: -4vw;
 }
 
-/* Create Account Button Hover */
-.signup-button:hover {
-    background: rgb(38, 145, 75); /* Darker green for hover effect */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
+.compare-text p {
+    font-size: 1.2vw;
+    color: black;
+    line-height: 1.4;
+    max-width: 90%;
+    margin-top: 0;
+    left: 26.5vw;
 }
 
-/* Active Click Effect */
-.login-button:active,
-.signup-button:active {
-    transform: translateY(1px);
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Popup Window */
-.popup-container {
-    display: none;
-    position: fixed;
-    top: 0;
+/* Bottom Banner */
+.bottom-banner {
+    position: absolute;
+    bottom: -10vh;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    height: 12vh;
+    background: rgb(45, 165, 85);
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
     justify-content: center;
     align-items: center;
+    transition: bottom 0.3s ease-in-out;
 }
 
-.popup {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    padding: 30px;
-    border-radius: 15px;
+/* Prevent Horizontal Scrolling */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* Peel Image 3 */
+.peel-image3 {
+    position: absolute;
+    left: 5vw;
+    top: 195vh;
+    width: 54vw;
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
+}
+
+/* Peel Image 4 */
+.peel-image4-container {
+    position: absolute;
+    left: 22vw;
+    top: 260vh;
+    z-index: 5;
+}
+
+.peel-image4 {
+    width: 100vw;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.peel-image5 {
+    width: 60vw;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    margin-left: 42.3vw;
+    margin-top: 40vh;
+}
+
+/* Convenience Section */
+.convenience-text {
+    width: 40vw;
+    position: absolute;
+    left: 8vw;
+    top: 282vh;
+    z-index: 10;
     text-align: center;
-    width: 360px;
-    position: relative;
 }
 
-/* Input Fields */
-.input-field {
-    width: 90%;
-    padding: 12px;
-    margin: 10px auto;
-    border: none;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.3);
-    color: white;
-    font-size: 16px;
-    text-align: center;
-    outline: none;
-    display: block;
-}
-
-.input-field::placeholder {
-    color: white;
-}
-
-/* Popup Buttons */
-.popup-button {
-    width: 90%;
-    padding: 12px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, rgb(6, 98, 32), rgb(52, 188, 97));
-    color: white;
-    font-size: 16px;
+.convenience-text h1 {
+    font-size: 3vw;
     font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    text-transform: none;
+    color: rgb(60, 57, 57);
+    margin-bottom: 1vh;
 }
 
-/* Popup Button Hover */
-.popup-button:hover {
-    background: linear-gradient(135deg, rgb(8, 115, 38), rgb(60, 205, 110));
-    transform: translateY(-1px);
-    opacity: 0.9;
+.convenience-text p {
+    font-size: 1.2vw;
+    color: rgb(0, 0, 0);
+    line-height: 1.4;
+    max-width: 90%;
+    margin-left: 2vw;
+    margin-top: -1vh;
 }
 
-/* Social Buttons */
-.social-button {
+/* Free to Use Section */
+.free-to-use-text {
+    position: absolute;
+    left: 50%;
+    top: 337vh;
+    margin-left: 18vw;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 50vw;
+}
+
+.free-to-use-text h1 {
+    font-size: 3vw;
+    font-weight: bold;
+    color: rgb(60, 57, 57);
+    margin-bottom: 1vh;
+}
+
+.free-to-use-text p {
+    font-size: 1.2vw;
+    color: rgb(0, 0, 0);
+    line-height: 1.4;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Bottom Banner 2 */
+.bottom-banner2 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 17vh;
+    background: linear-gradient(135deg, rgb(6, 98, 32), rgb(52, 188, 97));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1vh 5vw;
+    top: 405vh;
+}
+
+.disclaimer-text2 {
+    font-size: 0.8vw;
+    position: relative;
+    color: #ffffff;
+    line-height: 1.3;
+    max-width: 95%;
+    margin-top: 1vh;
+    margin-left: -10vw;
+    text-align: left;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    gap: 2vw;
+    position: absolute;
+    bottom: 12vh;
+    left: 12vw;
+}
+
+.login-button, .signup-button {
+    width: 10vw;
+    height: 6vh;
+    font-size: 1.4vw;
+    font-weight: 550;
+    border: none;
+    border-radius: 12px;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    padding: 10px;
-    margin: 5px auto;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    background: rgb(45, 165, 85);
     cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Social Button Hover */
-.social-button:hover {
-    transform: translateY(-1px);
+.login-button:hover, .signup-button:hover {
+    background: rgb(38, 145, 75);
+    transform: translateY(-3px);
 }
 
-/* Social Button Icons */
-.social-button img {
-    width: 20px;
-    margin-right: 10px;
-}
-
-/* Google Button */
-.google {
-    background: white;
-    color: black;
-}
-
-/* Microsoft Button */
-.microsoft {
-    background: white;
-    color: black;
-}
-
-/* Google & Microsoft Hover */
-.google:hover,
-.microsoft:hover {
-    background: #e5e5e5;
-}
-
-/* Close Button */
-.close-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    position: absolute;
-    right: 15px;
-    top: 10px;
-}
