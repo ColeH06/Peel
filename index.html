@@ -6,10 +6,92 @@
     <title>Welcome to Peel</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/css/styles.css">
+
+    <style>
+        /* General Styles */
+        body {
+            background: #c3eea3; /* Slightly greener, less pale */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align content to the left */
+            height: 100vh;
+        }
+
+        /* Sticky Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(135deg, rgb(6, 98, 32), rgb(52, 188, 97));
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        /* Peel Logo */
+        .logo {
+            height: 170px;
+            max-height: 190px;
+            margin-top: 16px;
+            margin-left: 15px;
+        }
+
+        /* Slogan Image */
+        .slogan {
+            width: 870px; /* Adjust width for readability */
+            max-width: 90%;
+            margin-top: 53px; /* Space below header */
+            margin-left: 6px; /* Moves it right for alignment */
+        }
+
+        /* Button Container (Further Right & Lowered) */
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 20px;
+            position: absolute;
+            top: 75%; /* Lowered further */
+            left: 220px; /* Moved further right */
+            transform: translateY(-50%);
+        }
+
+        /* Button Styles */
+        .login-button, .signup-button {
+            width: 180px;
+            height: 50px;
+            padding: 18px;
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-size: 21px;
+            font-weight: 570;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            background: rgb(45, 165, 85);
+        }
+
+        .login-button:hover, .signup-button:hover {
+            background: rgb(38, 145, 75);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Sticky Header -->
+    <!-- Sticky Dark Green Banner -->
     <div class="header">
         <img src="static/img/peel-logo.png" alt="Peel Logo" class="logo">
     </div>
@@ -18,18 +100,18 @@
         <p>Your #1 AI Shopping Assistant - Coming Soon!</p>
     </div>
 
-    <!-- Slogan -->
+    <!-- Slogan Below the Logo -->
     <img src="static/img/peel-slogan.png" alt="Peel Slogan" class="slogan">
 
     <!-- Tagline -->
     <p class="tagline">
-        Save time and money — Peel helps you find the <br>
-        best prices online in just seconds.
+    Save time and money — Peel helps you find the <br>
+    best prices online in just seconds.
     </p>
 
     <!-- Images -->
     <img src="static/img/peel-logo.png" alt="Peel Logo" class="peel-logo">
-    <img src="static/img/peel-slogan.png" alt="Peel Slogan" class="peel-slogan">
+    <img src="static/img/peel-slogan.png" alt="Peel SLogan" class="peel-slogan">
     <img src="static/img/peel-image.png" alt="Peel Image" class="peel-image">
     <img src="static/img/peel-image2.png" alt="Peel Image 2" class="peel-image2">
     <img src="static/img/peel-image3.png" alt="Peel Image 3" class="peel-image3">
@@ -37,53 +119,10 @@
     <img src="static/img/peel-image5.png" alt="Peel Image 5" class="peel-image5">
     <img src="static/img/peel-image7.png" alt="Peel Image 7" class="peel-image7">
 
-    <!-- Feature Sections -->
-    <div class="discover-section">
-        <div class="discover-text">
-            <h1>Discover Products</h1>
-            <p>We'll find the top products available<br>based on what you're looking for.</p>
-        </div>
-
-        <div class="compare-text">
-            <h1>Compare Prices</h1>
-            <p>We make sure to always "peel" away at various prices available.<br>
-               Our goal is to help you uncover lower prices and save money.</p>
-        </div>
-
-        <p class="disclaimer-text">
-            Prices displayed here are examples only and do not reflect current prices.<br>
-            Information you see on this page is provided for general, informational purposes only.
-        </p>
-    </div>
-
-    <div class="convenience-text">
-        <h1>Convenience</h1>
-        <p>With a simple search, Peel finds products across thousands of stores instantly.</p>
-    </div>
-
-    <div class="free-to-use-text">
-        <h1>Free to Use</h1>
-        <p>We won’t ever charge you anything. Peel is free to use and can be used anytime. It’s that easy.</p>
-    </div>
-
-    <!-- Bottom Disclaimer Banner -->
-    <div class="bottom-banner">
-        <p class="disclaimer-text2">
-            Prices displayed on this page are for examples only and do not reflect current prices. 
-            Money you could save depends on your shopping habits. Prices may change frequently and 
-            are displayed at the time you choose to shop. Peel does not compare all products or retailers. 
-            Shipping, taxes, and additional fees are not included in the listed price. 
-            Products may be subject to change at any time as determined by the retailer. 
-            Confirm on the retailer's site independently for the full pricing, availability, 
-            or product information before finalizing purchase. 
-            As a Sovrn affiliate, Peel may earn a small commission on qualifying purchases at no cost to you.
-        </p>
-    </div>
-
-    <!-- Login & Signup Buttons -->
+    <!-- Buttons -->
     <div class="button-container">
-        <button class="login-button">Login</button>
-        <button class="signup-button">Create Account</button>
+        <button class="login-button" id="login-btn">Login</button>
+        <button class="signup-button" id="signup-btn">Create Account</button>
     </div>
 
 </body>
