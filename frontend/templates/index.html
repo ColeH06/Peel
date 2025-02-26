@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Peel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <style>
+        /* General Styles */
+        body {
+            background: #c3eea3; /* Slightly greener, less pale */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align content to the left */
+            height: 100vh;
+        }
+
+        /* Sticky Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(135deg, rgb(6, 98, 32), rgb(52, 188, 97));
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        /* Peel Logo */
+        .logo {
+            height: 170px;
+            max-height: 190px;
+            margin-top: 16px;
+            margin-left: 15px;
+        }
+
+        /* Slogan Image */
+        .slogan {
+            width: 870px; /* Adjust width for readability */
+            max-width: 90%;
+            margin-top: 53px; /* Space below header */
+            margin-left: 6px; /* Moves it right for alignment */
+        }
+
+        /* Button Container (Further Right & Lowered) */
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 20px;
+            position: absolute;
+            top: 75%; /* Lowered further */
+            left: 220px; /* Moved further right */
+            transform: translateY(-50%);
+        }
+
+        /* Login Button */
+        .login-button {
+            width: 180px;
+            height: 50px;
+            padding: 18px;
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-size: 21px;
+            font-weight: 570;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            text-transform: none;
+            background: rgb(45, 165, 85); /* Slightly darker green */
+        }
+
+        /* Create Account Button */
+        .signup-button {
+            width: 220px;
+            height: 50px;
+            padding: 18px;
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-size: 21px;
+            font-weight: 570;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            text-transform: none;
+            background: rgb(45, 165, 85); /* Slightly darker green */
+        }
+
+        /* Login Button Hover */
+        .login-button:hover {
+            background: rgb(38, 145, 75); /* Darker green for hover effect */
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Create Account Button Hover */
+        .signup-button:hover {
+            background: rgb(38, 145, 75); /* Darker green for hover effect */
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Active Click Effect */
+        .login-button:active,
+        .signup-button:active {
+            transform: translateY(1px);
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Dark Green Banner -->
+    <div class="header">
+        <img src="{{ url_for('static', filename='peel-logo.png') }}" alt="Peel Logo" class="logo">
+    </div>
+
+    <div class="floating-header-text">
+        <p>Your #1 AI Shopping Assistant - Coming Soon!</p>
+    </div>
+
+    <!-- Slogan Below the Logo -->
+    <img src="{{ url_for('static', filename='peel-slogan.png') }}" alt="Peel Slogan" class="slogan">
+
+    <!-- Tagline Below the Slogan -->
+    <p class="tagline">
+    Save time and money — Peel helps you find the <br>
+    best prices online in just seconds.
+    </p>
+
+    <img src="{{ url_for('static', filename='peel-image.png') }}" alt="Peel Image" class="peel-image">
+
+    <img src="{{ url_for('static', filename='peel-image2.png') }}" alt="Peel Image 2" class="peel-image2">
+
+    <img src="{{ url_for('static', filename='peel-image3.png') }}" alt="Peel Image 3" class="peel-image3">
+
+    <div class="peel-image4-container">
+    <img src="{{ url_for('static', filename='peel-image4.png') }}" alt="Peel Image 4" class="peel-image4">
+    </div>
+    
+    <img src="{{ url_for('static', filename='peel-image5.png') }}" alt="Peel Image 5" class="peel-image5">
+
+    <img src="{{ url_for('static', filename='peel-image7.png') }}" alt="Peel Image 7" class="peel-image7">
+    <div class="bottom-banner">
+        Start saving on your favorite products
+    </div>
+
+    <!-- Section Below Second Banner (Background Change) -->
+    <div class="section-below-banner">
+    <!-- Add content inside here if needed -->
+    </div>
+
+    <!-- Container for Text & Image -->
+<div class="discover-section">
+    <!-- Left Side Text -->
+    <div class="discover-text">
+        <h1>Discover Products</h1>
+        <p>We'll find the top products available
+          <br> based off what you're looking for.</p>
+    </div>
+
+    <!-- Compare Prices Text (To the Right of Peel Image 3) -->
+    <div class="compare-text">
+    <h1>Compare Prices</h1>
+    <p>We make sure to always "peel" away at various prices available.
+       Our goal is to help you uncover lower prices and save money.</p>
+    </div>
+
+    <!-- Small Disclaimer Text Below -->
+    <p class="disclaimer-text">
+        Prices displayed here are examples only and do not reflect current prices.
+        <br> Information you see on this page is provided for general, informational purposes only.
+    </p>
+    </div>
+
+    <div class="convenience-text">
+        <h1>Convenience</h1>
+        <p>With a simple search, Peel finds products across thousands of stores instantly.</p>
+    </div>
+
+    <div class="free-to-use-text">
+        <h1>Free to Use</h1>
+        <p>We won't ever charge you anything. Peel is free to use and can be used anytime. It's that easy.</p>
+    </div>
+
+    <div class="bottom-banner2">
+        <p class="disclaimer-text2">
+        Prices displayed on this page are for examples only and do not reflect current prices. Information you see on this page is provided for general, informational purposes only. Money you could save depends on your shopping habits. Prices may change
+        frequently and are displayed at the time you choose to shop. Peel does not compare all products or retailers. Shipping, taxes, and additional fees are not included in the listed price. Products may be subject to change at any time as
+        determined by the retailer. Confirm on the retailer's site independently for the full pricing, availability, or product information before finalizing purchase. As a Sovrn affiliate, Peel may earn a small commission off qualifying purchases at no cost to you. </p>
+        
+    </div>
+
+    <!-- Login & Signup Buttons -->
+    <div class="button-container">
+        <button class="login-button" id="login-btn">Login</button>
+        <button class="signup-button" id="signup-btn">Create Account</button>
+    </div>
+
+    <!-- Popup for Login / Signup -->
+    <div class="popup-container" id="popup-container">
+        <div class="popup">
+            <button class="close-btn" id="close-popup">✖</button>
+            <h2 id="popup-title">Login</h2>
+            <input type="email" id="email" class="input-field" placeholder="Email">
+            <input type="password" id="password" class="input-field" placeholder="Password">
+            <button id="popup-action" class="popup-button"></button>
+            <button class="social-button google" id="google-login"><img src="/static/google-icon.png"> Continue with Google</button>
+            <button class="social-button microsoft" id="microsoft-login"><img src="/static/microsoft-icon.png"> Continue with Microsoft</button>
+        </div>
+    </div>
+
+    <!-- Firebase Authentication -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, OAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        let auth; // Declare globally
+
+        async function initializeFirebase() {
+            const response = await fetch("/firebase-config");
+            if (!response.ok) throw new Error("Failed to load Firebase config.");
+            const firebaseConfig = await response.json();
+            const app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+
+            document.getElementById("login-btn").onclick = () => openPopup('login');
+            document.getElementById("signup-btn").onclick = () => openPopup('signup');
+            document.getElementById("google-login").onclick = () => handleGoogleLogin();
+            document.getElementById("microsoft-login").onclick = () => handleMicrosoftLogin();
+            document.getElementById("popup-action").onclick = () => handleAuthAction();
+            document.getElementById("close-popup").onclick = () => closePopup();
+        }
+
+        initializeFirebase();
+
+        function openPopup(type) {
+            document.getElementById('popup-container').style.display = 'flex';
+            document.getElementById('popup-title').innerText = type === 'login' ? "Login" : "Create Account";
+            document.getElementById('popup-action').innerText = type === 'login' ? "Login" : "Sign Up";
+            document.getElementById('popup-action').onclick = type === 'login' ? handleLogin : handleSignup;
+        }
+
+        function closePopup() {
+            document.getElementById('popup-container').style.display = 'none';
+        }
+
+        async function handleLogin() {
+            await signInWithEmailAndPassword(auth, email.value, password.value);
+            window.location.href = "/chatbot";
+        }
+
+        async function handleSignup() {
+            await createUserWithEmailAndPassword(auth, email.value, password.value);
+            window.location.href = "/chatbot";
+        }
+
+        async function handleGoogleLogin() {
+            await signInWithPopup(auth, new GoogleAuthProvider());
+            window.location.href = "/chatbot";
+        }
+
+        async function handleMicrosoftLogin() {
+            await signInWithPopup(auth, new OAuthProvider("microsoft.com"));
+            window.location.href = "/chatbot";
+        }
+    </script>
+
+</body>
+</html>
