@@ -123,57 +123,6 @@
         <button class="signup-button" id="signup-btn">Create Account</button>
     </div>
 
-    <!-- Firebase Authentication -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, OAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-        let auth; 
-
-        async function initializeFirebase() {
-            const response = await fetch("/firebase-config");
-            if (!response.ok) throw new Error("Failed to load Firebase config.");
-            const firebaseConfig = await response.json();
-            const app = initializeApp(firebaseConfig);
-            auth = getAuth(app);
-
-            document.getElementById("login-btn").onclick = () => openPopup('login');
-            document.getElementById("signup-btn").onclick = () => openPopup('signup');
-        }
-
-        initializeFirebase();
-
-        function openPopup(type) {
-            document.getElementById('popup-container').style.display = 'flex';
-            document.getElementById('popup-title').innerText = type === 'login' ? "Login" : "Create Account";
-            document.getElementById('popup-action').innerText = type === 'login' ? "Login" : "Sign Up";
-            document.getElementById('popup-action').onclick = type === 'login' ? handleLogin : handleSignup;
-        }
-
-        function closePopup() {
-            document.getElementById('popup-container').style.display = 'none';
-        }
-
-        async function handleLogin() {
-            await signInWithEmailAndPassword(auth, email.value, password.value);
-            window.location.href = "/chatbot";
-        }
-
-        async function handleSignup() {
-            await createUserWithEmailAndPassword(auth, email.value, password.value);
-            window.location.href = "/chatbot";
-        }
-
-        async function handleGoogleLogin() {
-            await signInWithPopup(auth, new GoogleAuthProvider());
-            window.location.href = "/chatbot";
-        }
-
-        async function handleMicrosoftLogin() {
-            await signInWithPopup(auth, new OAuthProvider("microsoft.com"));
-            window.location.href = "/chatbot";
-        }
-    </script>
-
 </body>
 </html>
+
