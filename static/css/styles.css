@@ -1,0 +1,480 @@
+/* General Styles */
+body {
+    background: #c5f0a5; /* Slightly paler green */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 300vh;
+    width: 94vw;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Sticky Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 10vh; /* Scales dynamically */
+    background: linear-gradient(135deg, rgb(6, 98, 32), rgb(52, 188, 97));
+    display: flex;
+    align-items: center;
+    padding-left: 2vw;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Peel Logo */
+.logo {
+    height: 18vh; /* Scales dynamically */
+    max-height: 190px;
+    margin-top: 2vh;
+    margin-left: 1vw;
+}
+
+.floating-header-text {
+    position: fixed;
+    top: 5.5vh; /* Adjust vertical positioning */
+    right: 4vw; /* Aligns to the upper right */
+    z-index: 1100; /* Ensures it stays above the header */
+}
+
+/* White Text */
+.floating-header-text p {
+    color: white;
+    font-size: 1.2vw;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Tagline Below the Slogan */
+.tagline {
+    font-size: 1.2vw; /* Responsive font size */
+    font-weight: 380;
+    color: #000000;
+    text-align: left;
+    position: absolute;
+    top: 55vh; /* Proportional positioning */
+    left: 14.8vw;
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Peel Image (Right Side, Stays in Position) */
+.peel-image {
+    position: absolute;
+    top: 58vh; /* Proportional positioning */
+    right: 7.5vw; /* Stays in position regardless of zoom */
+    transform: translateY(-50%);
+    max-width: 100vw;
+    height: auto;
+    max-height: 85vh;
+}
+
+    /* Feature 1 */
+.peel-image2 {
+    position: relative; /* Ensures it follows normal document flow */
+    display: block;
+    margin: 4vh auto 0 auto; /* Adds space above and centers horizontally */
+    width: 60vw;
+    height: 20vh;
+    top: 27vh;
+    left: 19vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 80vh; /* Keeps proportions */
+    object-fit: contain;
+}
+
+ /* Discover Text (Separate from Image) */
+.discover-text {
+    width: 80vw;
+    position: absolute;
+    margin: -140vh auto 0 auto; /* Adds spacing from banner */
+    margin-right: 65vw;
+    margin-bottom: 10vh;
+    text-align: center;
+}
+
+.discover-text h1 {
+    font-size: 3vw;
+    font-weight: bold;
+    color: rgb(60, 57, 57);
+    margin-bottom: -1vh;
+    margin-right: 19vw;
+}
+
+.discover-text p {
+    font-size: 1.2vw;
+    color: black;
+    margin-bottom: 20vh;
+    margin-right: 19vw;
+    
+}
+
+/* Compare Prices Text (To the Right of Peel Image 3) */
+.compare-text {
+    width: 38vw; /* Controls width for better positioning */
+    text-align: center;
+    position: absolute;
+    left: 55vw; /* Places it to the right of Peel Image 3 */
+    top: 200vh; /* Adjust positioning based on image */
+}
+
+.compare-text h1 {
+    font-size: 3vw;
+    font-weight: bold;
+    color: rgb(60, 57, 57);
+    margin-bottom: 0.5vh;
+    margin-left: -4vw;
+}
+
+.compare-text p {
+    font-size: 1.2vw;
+    color: black;
+    line-height: 1.4;
+    max-width: 90%;
+    margin-top: 0;
+    left: 26.5vw;
+
+}
+    /* Bottom Banner */
+.bottom-banner {
+    position: absolute;
+    bottom: -10vh; /* Partially hidden until scroll */
+    left: 0;
+    width: 100%;
+    height: 12vh; /* Adjust height if needed */
+    background: rgb(45, 165, 85); /* Same color as buttons */
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: bottom 0.3s ease-in-out;
+}
+
+    /* Prevent Horizontal Scrolling */
+html, body {
+    overflow-x: hidden; /* Hides horizontal overflow */
+    max-width: 100vw; /* Ensures nothing extends beyond the viewport */
+}
+
+    /* Peel Image 3 (Left Side) */
+.peel-image3 {
+    position: absolute;
+    left: 5vw; /* Moves it towards the left edge */
+    top: 195vh; /* Adjust to position it lower */
+    width: 54vw; /* Smaller size */
+    height: auto;
+    max-height: 100vh; /* Keeps proportions */
+    object-fit: contain;
+}
+
+.peel-image4-container {
+    position: absolute;
+    max-width: -40vw;
+    left: 22vw;          
+    top: 260vh;           
+    z-index: 5; 
+}
+
+/* Peel Image 4 Styling */
+.peel-image4 {
+    width: 100vw;         /* Adjust size as needed */
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.peel-image5 {
+    width: 60vw; /* Ensures it matches other images */
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    margin-left: 42.3vw;
+    margin-top: 40vh; /* Adds spacing below the text */
+}
+.peel-image6 {
+    position: absolute;
+    right: 5vw; /* Positions it on the right */
+    top: 110vh; /* Aligns with the Convenience section */
+    width: 30vw; /* Controls size */
+    height: auto;
+    max-height: 50vh; /* Keeps proportions */
+    object-fit: contain;
+}
+
+/* Peel Image 7 (Below Everything) */
+.peel-image7 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centers it */
+    top: 319vh; /* Positions it below all sections */
+    margin-left: -26vw;
+    width: 50vw; /* Adjust size */
+    height: auto;
+    max-height: 60vh; /* Keeps proportions */
+    object-fit: contain;
+}
+
+/* Small Disclaimer Text Below Discover Products */
+.disclaimer-text {
+    font-size: 0.9vw; /* Makes it smaller */
+    position: relative;
+    color: #555; /* Slightly lighter color for subtlety */
+    line-height: 1.3;
+    max-width: 70%;
+    margin-top: -17.5vh; /* Adds spacing between main text and disclaimer */
+    margin-left: 55vw;
+    text-align: left;
+}
+
+    .convenience-text {
+        width: 40vw; 
+        position: absolute; /* Keeps it from shifting other elements */
+        left: 8vw; /* Adjust as needed */
+        top: 282vh; /* Position it below other sections */
+        z-index: 10; /* Ensures it appears above backgrounds */
+        text-align: center;
+}
+    
+    /* Bold Header */
+    .convenience-text h1 {
+        font-size: 3vw;
+        font-weight: bold;
+        color: rgb(60, 57, 57);
+        margin-bottom: 1vh;
+}
+
+    /* Smaller Descriptive Text */
+    .convenience-text p {
+        font-size: 1.2vw;
+        color: rgb(0, 0, 0);
+        line-height: 1.4;
+        max-width: 90%;
+        margin-left: 2vw;
+        margin-top: -1vh;
+}
+
+.free-to-use-text {
+    position: absolute;
+    left: 50%;
+    top: 337vh; /* Adjust as needed */
+    margin-left: 18vw;
+    transform: translateX(-50%); /* Ensures it stays centered */
+    text-align: center;
+    width: 50vw; /* Keeps text contained */
+}
+
+/* Bold Header */
+.free-to-use-text h1 {
+    font-size: 3vw;
+    font-weight: bold;
+    color: rgb(60, 57, 57);
+    margin-bottom: 1vh;
+}
+
+/* Smaller Descriptive Text */
+.free-to-use-text p {
+    font-size: 1.2vw;
+    color: rgb(0, 0, 0);
+    line-height: 1.4;
+    max-width: 90%;
+    margin: 0 auto; /* Ensures text stays centered */
+}
+
+.bottom-banner2 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 17vh; /* Same height as the top banner */
+    background: linear-gradient(135deg, rgb(6, 98, 32), rgb(52, 188, 97)); /* Same color as the top banner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1vh 5vw;
+    top: 405vh;
+}
+
+.disclaimer-text2 {
+    font-size: 0.8vw;
+    width: -200vw;
+    position: relative;
+    color: #ffffff; 
+    line-height: 1.3;
+    max-width: 95%;
+    margin-top: 1vh;
+    margin-left: -10vw;
+    text-align: left;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    gap: 2vw;
+    position: absolute;
+    bottom: 12vh;
+    left: 12vw;
+}
+
+/* Login & Signup Buttons */
+.login-button, .signup-button {
+    width: 10vw;
+    height: 6vh;
+    font-size: 1.4vw;
+    font-weight: 550;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button Colors */
+.login-button {
+    background: rgb(45, 165, 85);
+}
+.signup-button {
+    background: rgb(45, 165, 85);
+}
+
+/* Button Hover */
+.login-button:hover, .signup-button:hover {
+    background: rgb(38, 145, 75);
+    transform: translateY(-3px);
+}
+
+/* Button Click Effect */
+.login-button:active, .signup-button:active {
+    transform: translateY(1px);
+}
+
+/* Popup Window */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Box */
+.popup {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 3vw;
+    border-radius: 2vw;
+    text-align: center;
+    width: 25vw;
+    position: relative;
+}
+
+/* Input Fields */
+.input-field {
+    width: 90%;
+    padding: 1.5vh;
+    margin: 1vh auto;
+    border: none;
+    border-radius: 2vw;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1.2vw;
+    text-align: center;
+    outline: none;
+    display: block;
+}
+
+.input-field::placeholder {
+    color: white;
+}
+
+/* Popup Buttons */
+.popup-button {
+    width: 90%;
+    padding: 1.5vh;
+    margin-top: 1vh;
+    border: none;
+    border-radius: 1vw;
+    background: rgb(45, 165, 85);
+    color: white;
+    font-size: 1.2vw;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Popup Button Hover */
+.popup-button:hover {
+    background: rgb(38, 145, 75);
+    transform: translateY(-1px);
+}
+
+/* Social Buttons */
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    padding: 1vh;
+    margin: 0.5vh auto;
+    border: none;
+    border-radius: 1vw;
+    font-size: 1.2vw;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+/* Social Button Hover */
+.social-button:hover {
+    transform: translateY(-1px);
+}
+
+/* Social Button Icons */
+.social-button img {
+    width: 1.5vw;
+    margin-right: 1vw;
+}
+
+/* Google Button */
+.google {
+    background: white;
+    color: black;
+}
+
+/* Microsoft Button */
+.microsoft {
+    background: white;
+    color: black;
+}
+
+/* Google & Microsoft Hover */
+.google:hover, .microsoft:hover {
+    background: #e5e5e5;
+}
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2vw;
+    cursor: pointer;
+    position: absolute;
+    right: 2vw;
+    top: 1vw;
+}
