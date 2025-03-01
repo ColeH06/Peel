@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Peel</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="static/css/styles.css">
 
     <style>
         /* General Styles */
@@ -40,6 +40,14 @@
             max-height: 190px;
             margin-top: 16px;
             margin-left: 15px;
+        }
+
+        /* Slogan Image */
+        .slogan {
+            width: 870px; /* Adjust width for readability */
+            max-width: 90%;
+            margin-top: 53px; /* Space below header */
+            margin-left: 6px; /* Moves it right for alignment */
         }
 
         /* Button Container (Further Right & Lowered) */
@@ -119,7 +127,7 @@
 
     <!-- Sticky Dark Green Banner -->
     <div class="header">
-        <img src="{{ url_for('static', filename='peel-logo.png') }}" alt="Peel Logo" class="logo">
+        <img src="static/img/peel-logo.png" alt="Peel Logo" class="logo">
     </div>
 
     <div class="floating-header-text">
@@ -127,8 +135,7 @@
     </div>
 
     <!-- Slogan Below the Logo -->
-    <img src="{{ url_for('static', filename='peel-slogan.png') }}" alt="Peel Slogan" class="slogan">
-    <div></div>
+    <img src="static/img/peel-slogan.png" alt="Peel Slogan" class="slogan">
 
     <!-- Tagline Below the Slogan -->
     <p class="tagline">
@@ -136,19 +143,19 @@
     best prices online in just seconds.
     </p>
 
-    <img src="{{ url_for('static', filename='peel-image.png') }}" alt="Peel Image" class="peel-image">
+    <img src="static/img/peel-image.png" alt="Peel Image" class="peel-image">
 
-    <img src="{{ url_for('static', filename='peel-image2.png') }}" alt="Peel Image 2" class="peel-image2">
+    <img src="static/img/peel-image2.png" alt="Peel Image 2" class="peel-image2">
 
-    <img src="{{ url_for('static', filename='peel-image3.png') }}" alt="Peel Image 3" class="peel-image3">
+    <img src="static/img/peel-image3.png" alt="Peel Image 3" class="peel-image3">
 
     <div class="peel-image4-container">
-    <img src="{{ url_for('static', filename='peel-image4.png') }}" alt="Peel Image 4" class="peel-image4">
+    <img src="static/img/peel-image4.png" alt="Peel Image 4" class="peel-image4">
     </div>
     
-    <img src="{{ url_for('static', filename='peel-image5.png') }}" alt="Peel Image 5" class="peel-image5">
+    <img src="static/img/peel-image5.png" alt="Peel Image 5" class="peel-image5">
 
-    <img src="{{ url_for('static', filename='peel-image7.png') }}" alt="Peel Image 7" class="peel-image7">
+    <img src="static/img/peel-image7.png" alt="Peel Image 7" class="peel-image7">
     <div class="bottom-banner">
         Start saving on your favorite products
     </div>
@@ -207,7 +214,5 @@
 
 </body>
 </html>
-
-
 
 
