@@ -11,6 +11,41 @@ body {
     overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
+/*Tablet */
+@media (max-width: 1024px) {
+    .peel-image {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+/*Phone */
+@media (max-width: 600px) {
+    .peel-image {
+        left: 3vw;
+        margin-top: -26vh;
+        width: 80vw;
+        flex-direction: column;
+    }
+}
+
+    @media (max-width: 600px) {
+        .slogan {
+            left: 4vw !important;
+            margin-top: 40vh !important;
+            width: 150vw !important;
+            flex-direction: column !important;
+    }
+}
+    @media (max-width: 600px) {
+        .peel-logo {
+            left: 4vw !important;
+            margin-top: 40vh !important;
+            width: 150vw !important;
+            flex-direction: column !important;
+    }
+}
+
 /* Sticky Header */
 .header {
     position: fixed;
@@ -33,6 +68,14 @@ body {
     margin-left: 1vw;
 }
 
+/* Slogan Image */
+.slogan {
+    width: 56vw; /* Adjust width for readability */
+    max-width: 100%;
+    margin-top: 6vh; /* Space below header */
+    margin-left: 0.1w; /* Moves it right for alignment */
+}
+
 .floating-header-text {
     position: fixed;
     top: 5.5vh; /* Adjust vertical positioning */
@@ -43,7 +86,7 @@ body {
 /* White Text */
 .floating-header-text p {
     color: white;
-    font-size: 1.2vw;
+    font-size: 1.2em;
     font-weight: bold;
     font-style: italic;
     margin: 0;
@@ -67,7 +110,7 @@ body {
     top: 58vh; /* Proportional positioning */
     right: 7.5vw; /* Stays in position regardless of zoom */
     transform: translateY(-50%);
-    max-width: 100vw;
+    max-width: 100%;
     height: auto;
     max-height: 85vh;
 }
@@ -82,7 +125,7 @@ body {
     top: 27vh;
     left: 19vw;
     height: auto;
-    max-width: 100vw;
+    max-width: 100%;
     max-height: 80vh; /* Keeps proportions */
     object-fit: contain;
 }
@@ -91,9 +134,9 @@ body {
 .discover-text {
     width: 80vw;
     position: absolute;
-    margin: -140vh auto 0 auto; /* Adds spacing from banner */
+    margin: -30vh auto 0 auto; /* Adds spacing from banner */
     margin-right: 65vw;
-    margin-bottom: 10vh;
+    margin-bottom: 17vh;
     text-align: center;
 }
 
@@ -170,7 +213,7 @@ html, body {
     top: 195vh; /* Adjust to position it lower */
     width: 54vw; /* Smaller size */
     height: auto;
-    max-height: 100vh; /* Keeps proportions */
+    max-height: 100; /* Keeps proportions */
     object-fit: contain;
 }
 
@@ -191,12 +234,13 @@ html, body {
 }
 
 .peel-image5 {
+    position: absolute;
     width: 60vw; /* Ensures it matches other images */
     height: auto;
     max-height: 80vh;
     object-fit: contain;
     margin-left: 42.3vw;
-    margin-top: 40vh; /* Adds spacing below the text */
+    margin-top: 195vh; /* Adds spacing below the text */
 }
 .peel-image6 {
     position: absolute;
@@ -224,11 +268,11 @@ html, body {
 /* Small Disclaimer Text Below Discover Products */
 .disclaimer-text {
     font-size: 0.9vw; /* Makes it smaller */
-    position: relative;
+    position: absolute;
     color: #555; /* Slightly lighter color for subtlety */
     line-height: 1.3;
     max-width: 70%;
-    margin-top: -17.5vh; /* Adds spacing between main text and disclaimer */
+    margin-top: 95vh; /* Adds spacing between main text and disclaimer */
     margin-left: 55vw;
     text-align: left;
 }
@@ -313,6 +357,53 @@ html, body {
     margin-top: 1vh;
     margin-left: -10vw;
     text-align: left;
+}
+
+@media screen and (min-width: 1600px) {
+    body {
+        font-size: 1.2rem; /* Scale up text slightly */
+    }
+
+    .header {
+        height: 12vh; /* Make header slightly larger */
+        padding-left: 2.5vw; /* Adjust padding */
+    }
+
+    .logo {
+        height: 20vh; /* Scale up */
+        max-height: 210px;
+    }
+
+    .floating-header-text p {
+        font-size: 1.4vw; /* Slightly increase text size */
+    }
+
+    .tagline, .discover-text h1, .discover-text p,
+    .compare-text h1, .compare-text p, .convenience-text h1,
+    .convenience-text p, .free-to-use-text h1, .free-to-use-text p {
+        font-size: 1.3vw; /* Increase font size for larger screens */
+    }
+
+    .peel-image, .peel-image2, .peel-image3,
+    .peel-image4, .peel-image5, .peel-image6, .peel-image7 {
+        max-width: 110vw; /* Increase max width slightly */
+        max-height: 90vh;
+    }
+
+    .bottom-banner, .bottom-banner2 {
+        height: 14vh; /* Slightly taller */
+        font-size: 1.8vw; /* Bigger text */
+    }
+
+    .button-container {
+        bottom: 10vh; /* Adjust position */
+    }
+
+    .login-button, .signup-button {
+        width: 12vw; /* Increase button size */
+        height: 7vh;
+        font-size: 1.5vw;
+    }
 }
 
 /* Button Container */
@@ -478,4 +569,3 @@ html, body {
     right: 2vw;
     top: 1vw;
 }
-
